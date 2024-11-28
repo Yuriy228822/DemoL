@@ -1,0 +1,29 @@
+﻿<Window x:Class="DemoL.View.ManageRequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoL.View"
+        mc:Ignorable="d"
+        Title="ManageRequestWindow" Height="350" Width="580">
+    <Grid>
+        <DataGrid x:Name="DataGridRequests" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding requestID}"/>
+                <DataGridTextColumn Header="Дата начала работ" Binding="{Binding startDate}"/>
+                <DataGridTextColumn Header="Тип техники" Binding="{Binding orgTechType}"/>
+                <DataGridTextColumn Header="Модель" Binding="{Binding orgTechModel}"/>
+                <DataGridTextColumn Header="Проблемы" Binding="{Binding problemDescryption}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding requestStatus}"/>
+                <DataGridTextColumn Header="Дата Выполнения" Binding="{Binding completionDate}"/>
+                <DataGridTextColumn Header="Запчасти" Binding="{Binding repairParts}"/>
+                <DataGridTextColumn Header="ID Мастера" Binding="{Binding masterID}"/>
+                <DataGridTextColumn Header="ID Клиента" Binding="{Binding clientID}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddButton_Click"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="115,0,0,0"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="62,0,0,0"/>
+
+    </Grid>
+</Window>

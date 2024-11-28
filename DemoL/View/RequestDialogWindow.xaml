@@ -1,0 +1,64 @@
+﻿<Window x:Class="DemoL.View.RequestDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:DemoL.View"
+        mc:Ignorable="d"
+              Title="Добавление заявки" Height="567" Width="420" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Text="Введите данные заявки" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" 
+                   HorizontalAlignment="Center" Grid.Row="0"/>
+
+        <!-- Поля ввода -->
+        <StackPanel Grid.Row="1" Margin="0,10,0,10">
+            <TextBlock Text="Номер заявки:"/>
+            <TextBox x:Name="RequestIdTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Дата добавления:"/>
+            <DatePicker x:Name="StartDatePicker" SelectedDate="{x:Static sys:DateTime.Now}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Вид оргтехники:"/>
+            <TextBox x:Name="OrgTechTypeTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Модель:"/>
+            <TextBox x:Name="OrgTechModelTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Описание проблемы:"/>
+            <TextBox x:Name="ProblemDescriptionTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="ФИО клиента:"/>
+            <TextBox x:Name="ClientFioTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Номер телефона:"/>
+            <TextBox x:Name="ClientPhoneTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Статус заявки:"/>
+            <ComboBox x:Name="RequestStatusComboBox" Margin="0,0,0,10">
+                <ComboBoxItem Content="новая заявка" IsSelected="True"/>
+                <ComboBoxItem Content="в процессе ремонта"/>
+                <ComboBoxItem Content="завершена"/>
+            </ComboBox>
+
+            <TextBlock Text="ID клиента:"/>
+            <TextBox x:Name="ClientIdTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="ID мастера:"/>
+            <TextBox x:Name="MasterIdTextBox" Margin="0,0,0,10"/>
+        </StackPanel>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Сохранить" Width="100" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Отмена" Width="100" Margin="5" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
